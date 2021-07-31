@@ -1,6 +1,7 @@
 const app = require("../app")
-//const { expect } = require('chai')
+const { expect } = require('chai')
 const request = require('supertest')
+const syncAndSeed = require('../db')
 
 describe('first', () => {
   it('it1', () => {
