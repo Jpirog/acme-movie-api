@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/spec.js",
     "test:dev": "npm run test -- --watch",
-    "start:dev": "nodemon server"
+    "start:dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.12",
     "supertest": "^6.1.4"
   }
 }
