@@ -1,7 +1,7 @@
 const app = require("../app")
 const { expect } = require('chai')
 const request = require('supertest')
-const syncAndSeed = require('../db')
+const { syncAndSeed } = require('../db')
 
 describe('first', () => {
   it('it1', () => {
@@ -17,7 +17,7 @@ describe('first', () => {
 //     expect (response.text).to.equal('Hello World')
 //   })
 // })
-
+syncAndSeed();
 describe('second', () => {
    it('shows Hello World', async () => {
 request(app)
