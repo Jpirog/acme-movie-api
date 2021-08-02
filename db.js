@@ -42,13 +42,16 @@ const syncAndSeed = async()=> {
     Role.create({ character: 'Christoff', movieId: truman.id, actorId: harris.id}),
     Role.create({ character: 'Miranda Presly', movieId: devil.id, actorId: meryl.id})
   ]);
+  console.log('**********')
+  const data = await Movie.findAll();
+  console.log(data.length)
 };
 
 module.exports = {
   syncAndSeed,
-  models: {
+//  models: {
     Actor,
     Movie,
     Role
-  }
+//  }
 };
