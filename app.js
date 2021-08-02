@@ -4,7 +4,7 @@ const app = express();
 module.exports = app;
 app.use(require('cors')());
 
-const { Movie } = require('./db');
+const { Movie, Actor } = require('./db');
 
 
 app.get('/', (req, res, next) => {
@@ -13,7 +13,11 @@ app.get('/', (req, res, next) => {
 
 app.get('/api/movies', async (req, res, next) => {
   const data = await Movie.findAll();
-  console.log(data);
+  res.send(data)
+})
+
+app.get('/api/actors', async (req, res, next) => {
+  const data = await Actor.findAll();
   res.send(data)
 })
 

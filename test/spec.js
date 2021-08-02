@@ -17,6 +17,10 @@ describe('Basic tests', () => {
       expect (response.text).to.equal('Hello World')
     })
   })
+  it('allows cors requests', async()=> {
+    const response = await app.get('/');
+    expect(response.headers['access-control-allow-origin']).to.equal('*');
+  });
 })
 
 describe('Movie tests', () => {
@@ -26,6 +30,17 @@ describe('Movie tests', () => {
       const response = await app.get('/api/movies');
       expect(response.status).to.equal(200);
       expect(response.body.length).to.equal(4);
+    })
+  })
+})
+
+describe('Actor tests', () => {
+  beforeEach(()=> syncAndSeed());
+  describe('test for actors', () => {
+    it('returns actors', async () => {
+      const response = await app.get('/api/actors');
+      expect(response.status).to.equal(200);
+      expect(response.body.length).to.equal(5);
     })
   })
 })
