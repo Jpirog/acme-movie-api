@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha test/spec.js",
     "test:dev": "npm run test -- --watch",
-    "start:dev": "nodemon app"
+    "start:dev": "nodemon server"
   },
   "keywords": [],
   "author": "",

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 const { STRING } = Sequelize;
-const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:FSA123@localhost/acme_db');
+const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://postgres:FSA123@localhost/acme_db', {logging: false});
 
 const Movie = conn.define('movie', {
   title: STRING

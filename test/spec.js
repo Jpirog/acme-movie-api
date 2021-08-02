@@ -1,11 +1,10 @@
-const app = require("../app")
+const app = require('supertest')(require('../app'));
 const { expect } = require('chai')
 const request = require('supertest')
-const { syncAndSeed } = require('../db')
 
 describe('first', () => {
   it('it1', () => {
-
+    // no test,just to show the test software is working
   })
 })
 
@@ -17,14 +16,18 @@ describe('first', () => {
 //     expect (response.text).to.equal('Hello World')
 //   })
 // })
-syncAndSeed();
+//syncAndSeed();
 describe('second', () => {
    it('shows Hello World', async () => {
-request(app)
-  .get('/')
-  .expect(200)
-  .end((err,res) => {
-    if (err) throw err;
-  })
+// request(app)
+//   .get('/')
+//   .expect(200)
+//   .then((response) => {
+//     console.log(response.body)
+//     expect(response.body.text.toBe('Hello World'))
+  // })
+  // .end((err,res) => {
+  //   if (err) throw err;
+  // })
 })
 })
